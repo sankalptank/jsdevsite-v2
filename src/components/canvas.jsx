@@ -26,8 +26,14 @@ const CanvasScene = () => {
             <Cube setTextPosition={setTextPosition} scale={[cubeScale,cubeScale,cubeScale]} swayX={swayX} swayY={swayY} img={cubeImg} />
         </Canvas>
     </div>
-    <div className='bS'>
-      <img src='public/j1icon.png' className='logoImg'></img>
+    <div
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,      }}
+    >
+      <img src='j1icon.png' alt='Logo' style={{position: 'absolute', width: '250px', height: 'auto'
+}}/>
     </div>
     <div
       style={{
