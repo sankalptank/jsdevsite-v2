@@ -1,0 +1,2 @@
+-scale text position w/ cube scale (by extension canvas scale)
+-- try to get actual cube size or just use live canvas size

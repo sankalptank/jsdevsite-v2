@@ -7,7 +7,7 @@ localStorage.setItem('swayY', 0);
 
 
 
-function Cube({ position = [posX, posY, 0], setTextPosition, img='src/assets/default.png', scale = [2.6, 2.6, 2.6], swayX = 0, swayY = 0, posX = 0, posY = 0, opacityVal = 100, rotBack = true}) {
+function Cube({ position = [posX, posY, 0], setTextPosition, img='public/favicon.svg', scale = [2.6, 2.6, 2.6], swayX = 0, swayY = 0, posX = 0, posY = 0, opacityVal = 100, rotBack = true}) {
     const meshRef = useRef();
 
     
@@ -25,7 +25,7 @@ function Cube({ position = [posX, posY, 0], setTextPosition, img='src/assets/def
 
 
 
-        console.log('opacity:',opacityVal)
+        // console.log('opacity:',opacityVal)
 
 
         const worldPosition = new THREE.Vector3();
@@ -33,7 +33,6 @@ function Cube({ position = [posX, posY, 0], setTextPosition, img='src/assets/def
         const x = (screenPosition.x * 0.5 + 0.5) * window.innerWidth;
         const y = (screenPosition.y * -0.5 + 0.5) * window.innerHeight;
         meshRef.current.material.opacity = THREE.MathUtils.lerp(meshRef.current.material.opacity, opacityVal, clampedDelta * 10); // Lerp opacity
-
 
         meshRef.current.position.x = THREE.MathUtils.lerp(meshRef.current.position.x, posX, clampedDelta * 5);
         meshRef.current.position.y = THREE.MathUtils.lerp(meshRef.current.position.y, posY, clampedDelta * 5);
@@ -49,7 +48,7 @@ function Cube({ position = [posX, posY, 0], setTextPosition, img='src/assets/def
             localStorage.setItem('rotX', meshRef.current.rotation.x);
         };
 
-        setTextPosition({ x: x + 50, y: y - 50 });
+        setTextPosition({ x: x, y: y });
     });
 
     return (

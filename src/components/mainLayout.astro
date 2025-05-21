@@ -1,0 +1,40 @@
+---
+interface Props{
+    title: string;
+}
+
+const {title} = Astro.props;
+---
+
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+    </head>
+    <body>
+        <main>
+            <slot /> <!-- This is where the page content will be rendered -->
+        </main>
+    </body>
+</html>
+<style>
+    @font-face {
+        font-family: 'Fraktion Mono';
+        src: url('./public/fonts/PPFraktionMono-Regular.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        font-family: 'Fraktion Mono';
+    }
+
+    h1 {
+        color: rgb(0, 0, 0);
+        position: absolutex;
+    }
+</style>
